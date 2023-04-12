@@ -1,0 +1,68 @@
+Algumas funções interessantes:
+
+List<int> numbers = [4,6,8,1,3,7,9,-44,0,-5,56,41];
+
+-Função pra ordenar a lista de acordo com algum método(fórmula):
+    numbers.sort((a,b) => a - b); // nesse caso em ordem crescente
+    print(numbers); // [-44, -5, 0, 1, 3, 4, 6, 7, 8, 9, 41, 56]
+
+
+-Função para verificar se a lista contém determinado elemento:
+    print(numbers.contains(3)); // true
+
+    if(numbers.contains(3)){
+        ....
+        print("Acho!");
+        ....
+    }else{
+        print("Não achou!");
+    }
+
+
+-Função para pegar uma parte da lista até certo ponto(.take()) e função que pula uma parte da lista:
+
+    print(numbers.take(7)); // (-44, -5, 0, 1, 3, 4, 6)
+    print(numbers.skip(7)); // (7, 8, 9, 41, 56)
+    print(numbers.skip(3).take(4).skip(2)); // (4,6)
+
+
+-Função para adicionar e remover um elemento na lista:
+
+    numbers.add(100);
+    numbers.remove(0);
+    print(numbers); // [-44, -5, 1, 3, 4, 6, 7, 8, 9, 41, 56, 100]
+
+
+-Função utilizada para criar sublistas:
+
+    List<int> sublist = numbers.sublist(3,8);  // primeiro parâmetro é    inclusivo, mas o último não
+
+    print(sublist); // [1, 3, 4, 6, 7]
+
+
+-Função para percorrer a lista elemento por elemento como se fosse um 'for':
+
+    numbers.forEach((elemento){
+        print(elemento);
+    })
+    //nesse caso ela printaria o primeiro elemento, depois ocorreria uma iteração, e em sequência ela printaria o próximo, isso até acabar a lista
+
+
+-Função reduce:
+    //List<dynamic> GFT = ['Gabriel Furtado Teixeira',18,1.80,'Adekb12']
+    String linha = GFT.reduce((value, element){
+        return value + ' ' + element.toString();
+    });
+    print(linha); // Gabriel Furtado Teixeira 18 1.8 Adekb12
+
+
+-Função para criar uma sublista utilizando elementos que atendam a uma determinada condição:
+    //Exemplo: você quer só os elementos maiores que 4
+
+    Iterable maior = numbers.where((element) => element > 4);
+    print(maior); // or print(maior.toList()) // (6, 7, 8, 9, 41, 56)
+
+    List<int> maiores = numbers.where((element) => element < 4).toList();
+    print(maiores); // [-44, -5, 0, 1, 3]
+
+OBS: há alguns testes feitos com essas funções no arquivo de código "teste.dart"

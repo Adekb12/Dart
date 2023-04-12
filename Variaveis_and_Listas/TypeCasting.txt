@@ -1,0 +1,4 @@
+Conversão de string para int : usamos int.parse()
+Conversão de string para double: usamos double.parse() 
+Conversão de int para String: usamos toString() 
+Conversão de double para String : usamos toStringAsFixed() 
